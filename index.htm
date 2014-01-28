@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title></title>
+	</head>
+	<body>
+		<div id="mainContainer">	
+			<div id="contentContainer"></div>
+		</div>	
+		<script>
+			var myapp = {
+				model:{},
+				view:{},
+				collection:{},
+				router:{}
+			}
+		</script>
+		
+		<script id="list_container_tpl" type="text/template">
+		<div class="grid_5 listContainer">
+			<div class="box">
+				<h2 class="box_head grad_colour">Movie List</h2>
+					<div class="sorting">Show: <select id="movieSorting"><option value="0">New Movies</option><option value="1">Watched</option></select>
+						<input class="search round_all" id="searchmovie" type="text" value="">
+					</div>
+					<div class="block">
+					<ul id="movieList" class="list"></ul>
+				</div>
+			</div>
+		</div>
+		</script>
+		<script id="movie_item_tpl" type="text/template">
+			<li class="movie">
+
+				<h4 class="title searchItem"><a href="#"><%= title %> - (<%= duration %>) (<%= year %>) - <%= director %></h4></a>
+			</li>
+		</script>	
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="./js/underscore.js"></script>
+		<script type="text/javascript" src="./js/backbone.js"></script>		
+		<script type="text/javascript" src="./js/model.movies.js"></script>
+		<script type="text/javascript" src="./js/collection.movies.js"></script>
+		<script type="text/javascript" src="./js/view.moviesContainer.js"></script>
+		<script type="text/javascript" src="./js/view.moviesItem.js"></script>
+		<script type="text/javascript" src="./js/router.movies.js"></script>	
+<script>
+	Backbone.history.start();
+</script>
+</body></html>
